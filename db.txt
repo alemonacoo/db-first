@@ -1,0 +1,30 @@
+// Database per concessionario di auto usate
+
+//Descrizione Auto
+- id: intero - MEDIUMINT - PRIMARY-KEY AUTOINCREMENT UNIQUE NOT-NULL
+- targa: stringa - VARCHAR(7) - UNIQUE NOT-NULL
+- marca: stringa - VARCHAR(255) - NOT-NULL
+- modello: stringa - VARCHAR(255) - NOT-NULL
+- anno: intero - YEAR - NOT-NULL
+- prezzo_vendita: intero - MEDIUMINT - NOT-NULL
+- carburante: stringa - VARCHAR(50) - NOT-NULL
+- km_percorsi: intero - MEDIUMINT - NOT-NULL
+- colore: intero - VARCHAR(25) - NOT-NULL
+- consumo_medio (km/l): intero - TINYINT
+- cambio: stringa - VARCHAR(25)
+- trazione: stringa - VARCHAR(25)
+- posti: intero - TINYINT
+- porte: intero - TINYINT 
+- potenza (kW): intero - MEDIUMINT
+- luogo_prima_immatricolazione: stringa - VARCHAR(50)
+- condizione: stringa - TEXT 
+- n_incidenti: intero - TINYINT DEFAULT(0)
+
+
+//Relazione con concessionario
+- id: intero -MEDIUMINT - NOT-NULL
+- n_proprietari_precedenti: intero - TINYINT DEFAULT(1) - NOT-NULL
+- nome_ultimo_proprietario: stringa - VARCHAR(50) - NOT-NULL
+- data_vendita: stringa - DATE - NOT-NULL
+- prezzo_acquisto_concessionario: intero - MEDIUMINT - NOT-NULL
+- prezzo_vendita: intero - MEDIUMINT - NOT-NULL
